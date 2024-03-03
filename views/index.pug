@@ -3,9 +3,21 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         script(src="https://cdn.tailwindcss.com") 
-        title Document
-    body.text-3xl
-        h1.m-4 Kalkylator!
-        h2.m-2= `EURO ${euroRate}`
-        h3.m-2= `SEK: ${sekRate}`
-        h4.m-2= `USD: ${dollarRate}`
+        script(src="./public.js") 
+        title Kalkylator!
+    body.text-xl.bg-green-200
+        .w-full.h-20.mb-4.drop-shadow-lg(class="bg-gradient-to-r from-cyan-200 to-blue-500")
+            img(src="helen.png" alt="").mx-auto
+        .ml-6 
+            input(type="button" value="€" class="hover:bg-blue-200 duration-300").border-2.border-slate-800.w-10.h-10.m-1.text-center#euroBtn.cursor-pointer.rounded-lg.text-2xl.bg-white
+            input(type="button" value="$" class="hover:bg-blue-200 duration-300").border-2.border-slate-800.w-10.h-10.m-1.text-center#usdBtn.cursor-pointer.rounded-lg.text-2xl.bg-white
+        form(action="/" method="get").hidden#euroForm.ml-7.my-1
+            input(type="text" name="euroInput" id="euroInput" placeholder="€").border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg
+            button(type="submit" id="calculateButton" class="hover:bg-blue-200 duration-300").border-2.border-slate-800.rounded-lg.ml-2.p-1.drop-shadow-lg.bg-white Räkna ut!
+        form(action="/" method="get").hidden#usdForm.ml-7.my-1
+            input(type="text" name="usdInput" id="usdInput" placeholder="$").border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg
+            button(type="submit" id="calculateButton" class="hover:bg-blue-200 duration-300").border-2.border-slate-800.rounded-lg.ml-2.p-1.bg-white.drop-shadow-lg Räkna ut!
+        h2.hidden#euroRate.ml-7= `${inputEuro}€ =  ${Math.round(inputEuro * euroRate)}kr`
+        h2.hidden#usdRate.ml-7= `${inputUsd}$ =  ${Math.round(inputUsd * usdRate)}kr`
+        h3#inputEuro.hidden= `${inputEuro}`
+        h3#inputUsd.hidden=`${inputUsd}`
