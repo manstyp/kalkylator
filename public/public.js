@@ -7,17 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const usdRate = document.querySelector("#usdRate");
   const inputEuro = document.querySelector("#inputEuro").innerText;
   const inputUsd = document.querySelector("#inputUsd").innerText;
+  const euroSek = document.querySelector("#euroSek");
+  const usdSek = document.querySelector("#usdSek");
 
   if (!isNaN(inputEuro)) {
+    //om euro finns
     euroForm.classList.remove("hidden");
     usdForm.classList.add("hidden");
     euroRate.classList.remove("hidden");
     usdRate.classList.add("hidden");
+    euroSek.classList.remove("hidden");
   } else {
+    //om usd finns
     usdForm.classList.remove("hidden");
     euroForm.classList.add("hidden");
     usdRate.classList.remove("hidden");
     euroRate.classList.add("hidden");
+    usdSek.classList.remove("hidden");
   }
 
   euroBtn.addEventListener("click", function () {
