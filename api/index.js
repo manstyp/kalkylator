@@ -15,7 +15,7 @@ let globalInputEuro;
 app.set("views", viewsDirectory);
 app.set("view engine", "pug");
 app.set("public", path.join(__dirname, "public"));
-app.use(express.static(app.get("public")));
+app.use(express.static("public"));
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port: ${PORT}`);
