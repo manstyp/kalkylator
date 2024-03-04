@@ -3,6 +3,7 @@ const app = express();
 const pug = require("pug");
 const axios = require("axios");
 const path = require("path");
+const viewsDirectory = path.join(process.cwd(), "views");
 
 const PORT = 3000;
 const API_KEY = "0DJ7QeQRTFlRBOU2lxA9";
@@ -11,6 +12,7 @@ let euroRate;
 let usdRate;
 let globalInputEuro;
 
+app.set("views", viewsDirectory);
 app.set("view engine", "pug");
 app.set("public", path.join(__dirname, "public"));
 app.use(express.static(app.get("public")));
