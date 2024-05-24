@@ -4,6 +4,7 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         script(src="https://cdn.tailwindcss.com") 
         script(src="/js/public.js") 
+        link(rel="stylesheet" href="/css/style.css")
         title Kalkylator!
     body.text-xl.bg-green-200
         .w-full.h-20.mb-4.drop-shadow-lg(class="bg-gradient-to-r from-cyan-200 to-blue-500")
@@ -21,5 +22,22 @@ html(lang="en")
         h2.hidden#usdRate.ml-7= `${inputUsd}$ =  ${Math.round(inputUsd * usdRate)}kr`
         h3#inputEuro.hidden= `${inputEuro}`
         h3#inputUsd.hidden=`${inputUsd}`
-        h4#euroSek.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.ml-7.my-1.w-24.text-center.hidden= `${Math.round(inputEuro * euroRate)}kr`
-        h4#usdSek.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.ml-7.my-1.w-24.text-center.hidden= `${Math.round(inputUsd * usdRate)}kr`
+        .grid.grid-cols-10.grid-rows-10.mt-4
+            h4#euroSek.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.hidden.justify-self-end= `${Math.round(inputEuro * euroRate)} kr`
+            h4#usdSek.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.hidden.justify-self-end= `${Math.round(inputUsd * usdRate)} kr`
+            .grid.items-center
+                p.text-center.font-bold.hidden#TB27 TB 27
+            h4#usdTB27.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.hidden= `${Math.round((inputUsd * usdRate) / 0.73)} kr`
+            h4#euroTB27.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.hidden= `${Math.round((inputEuro * euroRate) / 0.73)} kr`
+            .grid.items-center.row-start-2.col-start-2
+                p.text-center.font-bold#TB30.hidden TB 30
+            h4#usdTB30.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.row-start-2.col-start-3.hidden= `${Math.round((inputUsd * usdRate) / 0.70)} kr`
+            h4#euroTB30.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.row-start-2.col-start-3.hidden= `${Math.round((inputEuro * euroRate) / 0.70)} kr`
+            .grid.items-center.row-start-3.col-start-2
+                p.text-center.font-bold#TB35.hidden TB 35
+            h4#usdTB35.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.row-start-3.col-start-3.hidden= `${Math.round((inputUsd * usdRate) / 0.65)} kr`
+            h4#euroTB35.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.row-start-3.col-start-3.hidden= `${Math.round((inputEuro * euroRate) / 0.65)} kr`
+            .grid.items-center.row-start-4.col-start-2
+                p.text-center.font-bold#TB40.hidden TB 40
+            h4#usdTB40.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.row-start-4.col-start-3.hidden= `${Math.round((inputUsd * usdRate) / 0.60)} kr`
+            h4#euroTB40.border-2.border-slate-800.rounded-lg.p-1.drop-shadow-lg.bg-white.my-1.w-24.text-center.row-start-4.col-start-3.hidden= `${Math.round((inputEuro * euroRate) / 0.60)} kr`

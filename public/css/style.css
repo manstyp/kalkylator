@@ -1,0 +1,12 @@
+@font-face {
+  font-family: coco;
+  src: url("/assets/LEMONMILK-Bold.otf");
+}
+body {
+  font-family: coco;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

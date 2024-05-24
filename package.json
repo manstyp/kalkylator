@@ -4,5 +4,24 @@
     "express": "^4.18.3",
     "node-fetch": "^3.3.2",
     "pug": "^3.0.2"
-  }
+  },
+  "name": "kalkylator",
+  "description": "",
+  "version": "1.0.0",
+  "main": "api/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manstyp/kalkylator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manstyp/kalkylator/issues"
+  },
+  "homepage": "https://github.com/manstyp/kalkylator#readme"
 }
