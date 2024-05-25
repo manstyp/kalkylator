@@ -2,11 +2,37 @@
   font-family: coco;
   src: url("/assets/LEMONMILK-Bold.otf");
 }
-body {
-  font-family: coco;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+
+* {
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif, system-ui;
   user-select: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#starPattern {
+  background-image: url(../assets/star.png);
+  background-size: 10%;
+  animation: pan 140s linear infinite;
+}
+
+@keyframes pan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+#overlay {
+  background: radial-gradient(transparent, rgb(233, 168, 46));
+}
+
+input:focus {
+  outline: none !important;
+}
+
+.input {
+  box-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000;
 }

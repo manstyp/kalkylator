@@ -65,4 +65,18 @@ document.addEventListener("DOMContentLoaded", function () {
     euroForm.classList.add("hidden");
     euroRate.classList.add("hidden");
   });
+
+  function hideInvalidElements() {
+    const elements = document.querySelectorAll(".content");
+
+    elements.forEach((element) => {
+      const content = element.textContent.trim();
+
+      if (content === "NaN" || content === "undefined") {
+        element.classList.add("hidden");
+      }
+    });
+  }
+
+  hideInvalidElements();
 });
